@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+    <h1>Guide to Web Accessibility</h1>
+    
+    <div class="outer-div">
+      <nav role="navigation" class="content-box">
+        <h3>Contents:</h3>
+        <ol>
+          <li><a href="#overview">Website Overview</a></li> 
+          <li><a href="#wcag_intro">Intro to WCAG</a></li>
+          <li>
+            <a href="#access_issues">Most Common Web Accessibility issues</a>
+            <ol>
+              <li><a href="#contrast">Low Contrast Text</a></li>
+              <li><a href="#alt_text">Missing Alt Text</a></li>
+              <li><a href="#missing_labels">Missing Labels</a></li>
+              <li><a href="#empty_links">Empty Links</a></li>
+              <li><a href="#empty_buttons">Empty Buttons</a></li>
+              <li><a href="#missing_language">Missing Language</a></li>
+            </ol>
+          </li> 
+          <li><a href="#links">Links</a></li>
+        </ol>
+      </nav>
+    </div>
+    
+    <div id="overview" class="outer-div">
+      <h2>Website Overview</h2>
+    
+      <h3>Why is Web Accessibility an issue?:</h3>
+      <p>Web Accessibility is a huge issue in this day and age. Roughly 96% of home pages in the top 1 million websites have detected <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG 2 failures</a> with an average of 56.1 errors per page, according to The WebAIM Million. This is concerning because approximately 20% of Australians have disabilities and approximately 2% have vision impairment, meaning that these issues can impact millions of people in Australia and potentially tens to hundreds of million people worldwide.</p>
+    
+      <h3>What is the purpose of this site?:</h3>
+      <p>The purpose of this site is to provide the necessary information and resources for developers to make their websites more accessible to others. This site will provide the top 6 most common website accessibility errors and links to additional tools and information.</p>
+    </div>
+    
+    <div id="wcag_intro" class="outer-div">
+      <h2>What is WCAG 2?:</h2>
+      <p>WCAG stands for Web Content Accessibility Guidelines. It was developed by the World Wide Web Consortium(W3C) and it’s an international standard for making digital content, websites and applications accessible. WCAG 2.2 is the latest version of WCAG and includes 13 guidelines, organized by 4 categories known by the acronym POUR.</p>
+    
+      <ol class="content-box h4-numbers">
+        <li>
+          <h4>Perceivable - Information and user interface components must be presentable to users in ways they can perceive.</h4>
+          <ul>
+            <li><p>This means that users must be able to perceive the information being presented (it can't be invisible to all of their senses)</p></li>
+          </ul>
+        </li>
+        <li>
+          <h4>Operable - User interface components and navigation must be operable.</h4>
+          <ul>
+            <li><p>This means that users must be able to operate the interface (the interface cannot require interaction that a user cannot perform)</p></li>
+          </ul>
+        </li>
+        <li>
+          <h4>Understandable - Information and the operation of the user interface must be understandable.</h4>
+          <ul>
+            <li><p>This means that users must be able to understand the information as well as the operation of the user interface (the content or operation cannot be beyond their understanding)</p></li>
+          </ul>
+        </li>
+        <li>
+          <h4>Robust - Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.</h4>
+          <ul>
+            <li><p>This means that users must be able to access the content as technologies advance (as technologies and user agents evolve, the content should remain accessible)</p></li>
+          </ul>
+        </li>
+      </ol>
+        
+      <p>Each guideline has 3 levels of conformance: A, AA and AAA. Level A is the bare minimum for website accessibility and doesn’t accommodate all users with disabilities. Level AA is typically industry standard and a benchmark for some digital accessibility laws. Level AAA is the most strict and the highest standard.</p>
+    
+      <p>While AAA is the highest standard, it’s not always the goal because it may be impractical or conflicting to the purpose of your website/application. However, it’s widely recommended that your website/app complies with at least level AA and at level AAA when feasible.</p>
+    </div>
+    
+    <div id="access_issues" class="outer-div">
+      <h2>Most Common Web Accessibility issues</h2>
+    
+      <ol class="h3-numbers">
+        <li>
+          <div id="contrast" class="padded-div">
+            <h3>Low Contrast Text</h3>
+    
+            <h4>Overview</h4>
+    
+            <ul>
+    
+              <li><p>Low contrast text is when the colour of the text is too similar to the background, making it harder to read.</p></li>
+    
+              <li><p>Low contrast text is the most common Web Accessibility Error, which is found on 83.9% of home pages and each home page has approximately 34 distinct instances of low contrast text.</p></li>
+    
+            </ul>
+    
+            <h4>Who does this affect and why?:</h4>
+    
+            <ul>
+              <li><p>People with low vision. This is because they struggle to distinguish between letters and the background without a sufficient amount of colour contrast. Around 2% of Australians suffer from severe vision impairment</p></li>
+    
+              <li><p>People who are colour blind. Many websites and apps rely on hue differences instead of brightness, making it difficult or even impossible for some colour blind people to read text. Around 2% of Australians have some kind of colour blindness.</p></li>
+    
+              <li><p>People who have cognitive impairment or a neurodevelopmental disorder. Difficulty focusing or maintaining attention is exacerbated by poor visual contrast. Around 10% of Australian children have an early neurodevelopmental condition and roughly 1.6% of people in Australia have dementia.</p></li>
+            </ul>
+    
+            <h4>Examples:</h4>
+    
+            <div class="comparison-wrapper">
+              <div class="column error-col">
+                  <h4>Error: Low Contrast Text</h4>
+                  <div class="rendered-element">
+                      <span style="color: #d3d3d3; background-color: #ffffff;">This text is very hard to read.</span>
+                  </div>
+                  <div class="code-block">&lt;span style="color: #d3d3d3; background-color: #ffffff;"&gt;
+          This text is very hard to read.
+      &lt;/span&gt;</div>
+              </div>
+              <div class="column correct-col">
+                  <h4>Solution: High Contrast Text</h4>
+                  <div class="rendered-element">
+                      <span style="color: #000000; background-color: #ffffff;">This text is easy to read.</span>
+                  </div>
+                  <div class="code-block">&lt;span style="color: #000000; background-color: #ffffff;"&gt;
+          This text is easy to read.
+      &lt;/span&gt;</div>
+              </div>
+            </div>
+    
+            <h4>Tools:</h4>
+    
+            <ul>
+              <li><p>Use <a href="https://webaim.org/resources/contrastchecker/">WebAIM's Contrast Checker</a> to compare the colour of the background to the colour of the text. You should aim for a contrast ratio of at least 4.5 for normal text and 3 for large text.</p></li>
+    
+              <li><p>To check the colour contrast of an entire page, use WebAIM's WAVE, Google Lighthouse or just press Ctrl+Shift+C and hover over the elements you want to check. These tools can be found under the <a href="#links">Links heading</a>.</p></li>
+            </ul>
+            
+          </div>
+        </li>
+    
+        <li>
+          <div id="alt_text" class="padded-div">
+            <h3>Missing Alt Text</h3>
+    
+            <h4>Overview</h4>
+    
+            <ul>
+            
+              <li><p>Missing Alt Text is when a website’s visual elements(like images, charts, videos and interactive elements like buttons) don’t have an alternative text. The alternative text provides a short, written text description of images and graphics. Check this link to learn more about Alt Text: <a href="https://accessibility.huit.harvard.edu/describe-content-images">Harvard Alt Text Guide</a></p></li>
+    
+              <li><p>Missing Alt Text(Alternative Text) is found on roughly 53.1% of the homepages on the top 1 million websites and around 16.2% of all images had missing alt text with 10.8 errors on average for every page.</p></li>
+    
+            </ul>
+    
+            <h4>Who does this affect and why?:</h4>
+    
+            <ul>
+              <li><p>People with vision impairment. This is because they may require screen readers to read the website elements in order to understand the content, and missing alt text means that they won’t be able to understand any images, graphs or interactive elements in the website. Around 2% of Australians suffer from severe vision impairment.</li>
+            </ul>
+    
+            <h4>Examples:</h4>
+    
+            <div class="comparison-wrapper">
+              <div class="column error-col">
+                  <h4>Error: Missing Alt Text</h4>
+                  <div class="rendered-element">
+                      <img src="https://via.placeholder.com/100" />
+                  </div>
+                  <div class="code-block">&lt;img src="image.jpg" /&gt;</div>
+              </div>
+              <div class="column correct-col">
+                  <h4>Solution: Descriptive Alt Text</h4>
+                  <div class="rendered-element">
+                      <img src="https://via.placeholder.com/100" alt="A grey placeholder image showing the dimensions 100x100" />
+                  </div>
+                  <div class="code-block">&lt;img src="image.jpg" alt="A grey placeholder image showing the dimensions 100x100" /&gt;</div>
+              </div>
+            </div>
+    
+            <h4>Tools:</h4>
+    
+            <ul>
+              <li><p></p></li>
+            </ul>
+            
+          </div>
+        </li>
+    
+        <li>
+          <div id="missing_labels" class="padded-div">
+            <h3>Missing Labels</h3>
+    
+            <h4>Overview</h4>
+    
+            <ul>
+    
+              <li><p>Missing Labels is when form fields, check boxes, radio buttons or other interactive elements don’t have a HTML tag to describe their functionality, making it difficult/impossible to use for people with screen readers. Check this link to learn more about Missing Labels: <a href="https://www.boia.org/blog/missing-input-labels-how-to-fix-a-common-accessibility-issue">Bureau of Internet Accessibility Missing Input Label</a></p></li>
+    
+              <li><p>Around 51% of the home pages of the top 1 million websites have missing labels. Home pages had around 6.9 form inputs on average, with around a third of those(33.1%) not being properly labelled.</p></li>
+    
+            </ul>
+    
+            <h4>Who does this affect and why?:</h4>
+    
+            <ul>
+              <li><p>Much like missing alt text, missing labels primarily affects people with vision impairment because they require screen readers to understand the content of a website, and missing labels means they won’t understand the functionality of interactive elements like form fields or check boxes on a website. Around 2% of Australians suffer from severe vision impairment.
+    </p></li>
+            </ul>
+    
+            <h4>Examples:</h4>
+    
+            <div class="comparison-wrapper">
+              <div class="column error-col">
+                  <h4>Error: Missing Label</h4>
+                  <div class="rendered-element">
+                      <input type="text" name="email" placeholder="Email Address">
+                  </div>
+                  <div class="code-block">&lt;input type="text" name="email" placeholder="Email Address"&gt;</div>
+              </div>
+              <div class="column correct-col">
+                  <h4>Solution: Linked Label</h4>
+                  <div class="rendered-element">
+                      <label for="user-email">Email Address:</label>
+                      <input type="text" id="user-email" name="email">
+                  </div>
+                  <div class="code-block">&lt;label for="user-email"&gt;Email Address:&lt;/label&gt;
+      &lt;input type="text" id="user-email" name="email"&gt;</div>
+              </div>
+            </div>
+            
+          </div>
+        </li>
+    
+        <li>
+          <div id="empty_links" class="padded-div">
+            <h3>Empty Links</h3>
+    
+            <h4>Overview</h4>
+    
+            <ul>
+    
+              <li><p>Empty Links is when hyperlinks in a website don’t have any associated content or has very undescriptive content(like “click here”). Check this link to learn more about Empty Links: <a href="https://www.boia.org/blog/what-are-empty-hyperlinks">Bureau of Internet Accessibility Empty Links</a></p></li>
+    
+              <li><p>Around 46.3% of the homepages on the top 1 million websites have empty links.</p></li>
+    
+            </ul>
+    
+            <h4>Who does this affect and why?:</h4>
+    
+            <ul>
+              <li><p>People with vision impairment. This is because they usually use keyboard shortcuts like tab to go from link to link, and if the link doesn’t have enough information to be understood on its own, they won’t understand where it would link to. Around 2% of Australians suffer from severe vision impairment.</p></li>
+            </ul>
+    
+            <h4>Examples:</h4>
+    
+            <div class="comparison-wrapper">
+              <div class="column error-col">
+                  <h4>Error: Empty Link</h4>
+                  <div class="rendered-element">
+                      <a href="https://example.com"></a>
+                  </div>
+                  <div class="code-block">&lt;a href="https://example.com"&gt;&lt;/a&gt;</div>
+              </div>
+              <div class="column correct-col">
+                  <h4>Solution: Link with Descriptive Text</h4>
+                  <div class="rendered-element">
+                      <a href="https://example.com">Read our Accessibility Guide</a>
+                  </div>
+                  <div class="code-block">&lt;a href="https://example.com"&gt;Read our Accessibility Guide&lt;/a&gt;</div>
+              </div>
+            </div>
+            
+          </div>
+        </li>
+    
+        <li>
+          <div id="empty_buttons" class="padded-div">
+            <h3>Empty Buttons</h3>
+    
+            <h4>Overview</h4>
+    
+            <ul>
+    
+              <li><p>Buttons and links in HTML may seem similar, but they both are different for screen readers, keyboard navigation and user expectations. Both of them can be tabbed to with a screen reader, but pressing either Space or Enter button will trigger the button, but only Enter will work for links. In addition, users expect that a link will redirect them to another page while buttons should have an action happen on the current page.</p></li>
+    
+              <li><p>Empty Buttons is when a website's buttons don't have text that describes the button’s functionality, resulting in people using screen readers being unable to understand its function. Check this link to learn more about Empty Buttons: <a href="https://equalizedigital.com/accessibility-checker/empty-button/">Equalized Digital Empty Button</a></p></li>
+    
+              <li><p>Around 30.6% of the homepages on the top 1 million websites have empty buttons.</p></li>
+    
+            </ul>
+    
+            <h4>Who does this affect and why?:</h4>
+    
+            <ul>
+              <li><p>People with vision impairment. This is because they rely on screen readers and keyboard shortcuts to navigate websites, and empty buttons makes it impossible to understand the functionality of that button. Around 2% of Australians suffer from severe vision impairment.</p></li>
+            </ul>
+    
+            <h4>Examples:</h4>
+    
+            <div class="comparison-wrapper">
+              <div class="column error-col">
+                  <h4>Error: Empty Button</h4>
+                  <div class="rendered-element">
+                      <button type="submit"></button>
+                  </div>
+                  <div class="code-block">&lt;button type="submit"&gt;&lt;/button&gt;</div>
+              </div>
+              <div class="column correct-col">
+                  <h4>Solution: Button with Text</h4>
+                  <div class="rendered-element">
+                      <button type="submit">Submit Form</button>
+                  </div>
+                  <div class="code-block">&lt;button type="submit"&gt;Submit Form&lt;/button&gt;</div>
+              </div>
+            </div>
+            
+          </div>
+        </li>
+    
+        <li>
+          <div id="missing_language" class="padded-div">
+            <h3>Missing Language</h3>
+    
+            <h4>Overview</h4>
+    
+            <ul>
+    
+              <li><p>Missing Language in HTML is when a page or post is missing a language declaration that is used by assistive technology to understand what the default language for that particular page is. Without a language declaration, a screen reader may have a difficult time understanding what language the page is and may miss sections of text or convey them incorrectly. Note that you should declare any language changes if there are any mid-page. Check this link to learn more about Missing Language: <a href="https://equalizedigital.com/accessibility-checker/missing-language-declaration/">Equalized Digital Missing Language</a></p></li>
+    
+              <li><p>Around 13.5% of the homepages on the top 1 million websites have missing language.</p></li>
+    
+            </ul>
+    
+            <h4>Who does this affect and why?:</h4>
+    
+            <ul>
+              <li><p>People with vision impairment. This is because they rely on screen readers and keyboard shortcuts to navigate websites, and missing language may result in them not understanding the default language of the page and missing sections of text. Around 2% of Australians suffer from severe vision impairment.</p></li>
+            </ul>
+    
+            <h4>Examples:</h4>
+    
+            <div class="comparison-wrapper">
+              <div class="column error-col">
+                  <h4>Error: Missing Document Language</h4>
+                  <div class="rendered-element">
+                      <em>(Language declaration applies to the whole page, see code below)</em>
+                  </div>
+                  <div class="code-block">&lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+        &lt;head&gt;...&lt;/head&gt;
+        &lt;body&gt;...&lt;/body&gt;
+      &lt;/html&gt;</div>
+              </div>
+              <div class="column correct-col">
+                  <h4>Solution: Defined Document Language</h4>
+                  <div class="rendered-element">
+                      <em>(Screen readers now know how to pronounce the text)</em>
+                  </div>
+                  <div class="code-block">&lt;!DOCTYPE html&gt;
+      &lt;html lang="en"&gt;
+        &lt;head&gt;...&lt;/head&gt;
+        &lt;body&gt;...&lt;/body&gt;
+      &lt;/html&gt;</div>
+              </div>
+            </div>
+            
+          </div>
+        </li>
+      </ol>
+    </div>
+    
+    <div id="links" class="outer-div">
+      <h2>Links</h2>
+    
+      <p>Unfortunately, I can only put the basics of website accessibility on this site because of time constraints so if you're interested, take a look at these links:</p>
+    
+      <h3>ARIA</h3>
+      <ul>
+        <li>
+          <p>For a beginner summary of ARIA(Accessible Rich Internet Applications), visit this site: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN Web Docs ARIA Overview</a></p>
+        </li>
+        <li>
+          <p>For a comprehensive guide to ARIA, visit this site: <a href="https://www.w3.org/WAI/ARIA/apg/">W3C ARIA Authoring Practices Guide</a></p>
+        </li>
+      </ul>
+    
+      <h3>Tools</h3>
+      <ul>
+        <li>
+          <p>For a website accessibility evaluator, check out WAVE: <a href="https://wave.webaim.org/">WebAIM WAVE</a></p>
+        </li>
+    
+        <li>
+          <p>Alternatively, you can use Google Lighthouse by doing inspect page, then clicking one the 2 horizontal arrows at the top(>>) and selecting Lighthouse.</p>
+        </li>
+    
+        <li>
+          <p>To quickly inspect a website's elements, press Ctrl+Shift+C. You can try it right now on this site.</p>
+        </li>
+    
+        <li>
+          <p>To simulate color blindness on your site, use this chrome extension: <a href="https://chromewebstore.google.com/detail/colorblindly/floniaahmccleoclneebhhmnjgdfijgg?hl=en">Colourblindly link</a></p>
+        </li>
+      </ul>
+    
+      <h3>Screen readers</h3>
+      <p>These are links to test screen readers on your site, depending on what device that you use.</p>
+      <ul>
+        <li>
+          <p>For Chromebook, press Ctrl + Alt + Z to enable ChromeVox and visit this site for further instructions: <a href="https://support.google.com/accessibility/answer/7031755?hl=en">Chrome Help ChromeVox</a></p>
+        </li>
+    
+        <li>
+          <p>For Windows, download the <a href="https://www.nvaccess.org/download/">NVDA screen reader</a>. Instructions are here: <a href="https://download.nvaccess.org/documentation/userGuide.html">NVDA Screen Reader Guide</a></p>
+        </li>
+    
+        <li>
+          <p>For Mac, use VoiceOver with Cmd + F5. Visit this website for further instructions: <a href="https://support.apple.com/en-au/guide/voiceover/welcome/mac">VoiceOver User Guide</a></p>
+        </li>
+      </ul>
+    
+      <h3>Miscellaneous</h3>
+      <ul>
+        <li>
+          <p><a href="https://www.clothes4all.net/">Clothes4All</a> is a great site to see how different accessibility issues can affect the user experience. Choose a Test Site and click on Ruleset on the top right to change what accessibility features are added. Then, the tools mentioned or screen readers to see the user experience.</p>
+        </li>
+    
+        <li>
+          <p>I used <a href="https://webaim.org/projects/million/">The WebAIM Million 2026</a> to research the top 6 most common web accessibility errors. It also includes interesting graphs and tables that you might want to check out.</p>
+        </li>
+    
+        <li>
+          <p>I also used this <a href="https://www.w3.org/TR/2024/REC-WCAG22-20241212/">WCAG 2.2 Guidelines</a> site to research basically all of the WCAG 2 content on my website.</p>
+        </li>
+      </ul>
+      
+    </div>
+    
+    <footer>Please send any recommendations/questions to this Gmail account: wisdomandserviceproject@gmail.com</footer>
+  </body>
+</html>
