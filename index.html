@@ -91,7 +91,7 @@
     
               <li><p>Low contrast text is when the colour of the text is too similar to the background, making it harder to read.</p></li>
     
-              <li><p>Low contrast text is the most common Web Accessibility Error, which is found on 83.9% of home pages and each home page has approximately 34 distinct instances of low contrast text.</p></li>
+              <li><p>Low contrast text is the most common Web Accessibility Error. It is found on around 83.9% of home pages and each home page has approximately 34 distinct instances of low contrast text.</p></li>
     
             </ul>
     
@@ -177,13 +177,6 @@
                   <div class="code-block">&lt;img src="image.jpg" alt="A grey placeholder image showing the dimensions 100x100" /&gt;</div>
               </div>
             </div>
-    
-            <h4>Tools:</h4>
-    
-            <ul>
-              <li><p></p></li>
-            </ul>
-            
           </div>
         </li>
     
@@ -213,13 +206,15 @@
             <div class="comparison-wrapper">
               <div class="column error-col">
                   <h4>Error: Missing Label</h4>
+                  <p>While it looks perfectly fine for most people, screen readers won't understand the functionality of this form input.</p>
                   <div class="rendered-element">
-                      <input type="text" name="email" placeholder="Email Address">
+                      <p>Email Address:</p><input type="text" name="email">
                   </div>
-                  <div class="code-block">&lt;input type="text" name="email" placeholder="Email Address"&gt;</div>
+                  <div class="code-block">&lt;p&gt;Email Address:&lt;/p&gt;&lt;input type="text" name="email"&gt;</div>
               </div>
               <div class="column correct-col">
                   <h4>Solution: Linked Label</h4>
+                  <p>Screen readers will understand the functionality of this form input because it says it in the label element.</p>
                   <div class="rendered-element">
                       <label for="user-email">Email Address:</label>
                       <input type="text" id="user-email" name="email">
@@ -257,13 +252,15 @@
             <div class="comparison-wrapper">
               <div class="column error-col">
                   <h4>Error: Empty Link</h4>
+                  <p>People who use keyboard only navigation won't understand the context of this link, the screen reader will just say "click here".</p>
                   <div class="rendered-element">
-                      <a href="https://example.com"></a>
+                      <p>Read our Accessibility Guide: <a href="https://example.com">Click here</a></p>
                   </div>
-                  <div class="code-block">&lt;a href="https://example.com"&gt;&lt;/a&gt;</div>
+                  <div class="code-block">&lt;p&gt;Read our Accessibility Guide: &lt;a href="https://example.com"&gt;Click here&lt;/a&gt;&lt;/p&gt;</div>
               </div>
               <div class="column correct-col">
                   <h4>Solution: Link with Descriptive Text</h4>
+                  <p>People who use keyboard only navigation will understand this link, the screen reader will say "Read our Accessibility Guide".</p>
                   <div class="rendered-element">
                       <a href="https://example.com">Read our Accessibility Guide</a>
                   </div>
@@ -301,13 +298,15 @@
             <div class="comparison-wrapper">
               <div class="column error-col">
                   <h4>Error: Empty Button</h4>
+                  <p>Not only does this look worse, but for people who use keyboard only navigation, it will just say "button".</p>
                   <div class="rendered-element">
-                      <button type="submit"></button>
+                      <p>Submit form: </p><button type="submit"></button>
                   </div>
-                  <div class="code-block">&lt;button type="submit"&gt;&lt;/button&gt;</div>
+                  <div class="code-block">&lt;p&gt;Submit form: &lt;/p&gt;&lt;button type="submit"&gt;&lt;/button&gt;</div>
               </div>
               <div class="column correct-col">
                   <h4>Solution: Button with Text</h4>
+                  <p>This both looks a lot better and is accessibile. Screen readers will read this as "Submit Form, Button".</p>
                   <div class="rendered-element">
                       <button type="submit">Submit Form</button>
                   </div>
