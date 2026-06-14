@@ -21,6 +21,14 @@ nav ol{
   list-style-type: square;
 }
 
+nav ol li{
+  margin: 2px 0;
+}
+
+nav ol li a{
+  font-size: 1.2em;
+}
+
 ol.h3-numbers > li::marker {
   font-size: 1.5em;
   color: #8F0303;
