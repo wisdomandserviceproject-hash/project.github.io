@@ -2,7 +2,7 @@ body{
   background-color: white;
 }
 
-.outer-div{
+.outer-div, nav{
   margin: 0 100px;
   padding: 20px 0;
 }
@@ -130,6 +130,6 @@ h4{
   letter-spacing: 0.5px;
 }
 
-footer{
+footer p{
   text-align: center;
 }
